@@ -135,7 +135,7 @@ for(j = 0; j<=(Params->MAXT2[pop]); j++){    //loop calculating the likelihood f
 
 	day=Params->EXPDATA[pop][j][2];   //CK// pull out the week number for that cage
 
-	c1=sim_results[day][3];	c2=sim_results[day][4];			//CK//  condidia and resting spores for that week from DDEVF
+	c1=sim_results[day][3];	c2=sim_results[day][4];			//CK//  conidia and resting spores for the second last and ending of that week from DDEVF (from model output)
 	r1=sim_results[day][5];	r2=sim_results[day][6];
 
 	y1=Params->EXPDATA[pop][j][0];		y2=Params->EXPDATA[pop][j][1];		//CK//  S and F(infected by fungus) for that cage
