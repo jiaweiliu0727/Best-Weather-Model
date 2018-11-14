@@ -502,8 +502,8 @@ while (t_0<MAXT3+h)	{    //CK// change MAXT to MAXT2 to let it go to the end of 
 //getc(stdin);
 
 	if ((day+1)%7==0)	{
-		ConiBefore=y_ode[m+1]*nuF2;  //CK// Saving the conidia on the beginning day of the week. 0 here.
-		RestBefore = Params->POPS[3]*nuR2;  //Saving the conidia on the beginning day of the week
+		ConiBefore=y_ode[m+1]*nuF2;  //CK// Saving the conidia at the end of the second last day of the week. 0 here.
+		RestBefore = Params->POPS[3]*nuR2;  //Saving the resting spores (fungus) at the end of the second last day of the week
 		//ConiBefore=y_ode[m+1]*Params->nuF;  //CK// Saving the conidia 24 hours before feral collection
 		//RestBefore = Params->POPS[3]*Params->nuR;
 		//FlagConidia=2;
@@ -557,14 +557,14 @@ while (t_0<MAXT3+h)	{    //CK// change MAXT to MAXT2 to let it go to the end of 
 
 		//STORING THE F AND R AT EACH WEEK
 		//JL: Recording the fungus density and transmission rate on the beginning and ending day of a week. Passing to hood_pops.h to calculate likelihoods from experimental data.
-		sim_results[week][3]=ConiBefore;  //CK// Saving the conidia on the beginning day of each week. 0 here.
+		sim_results[week][3]=ConiBefore;  //CK// Saving the conidia at the end of the second last day of the week. 0 here.
 
 		//sim_results[week][4]=y_ode[m+1]*Params->nuF;
-		sim_results[week][4]=y_ode[m+1]*nuF2;   //Saving the conidia on the ending day of each week. 0 here.
+		sim_results[week][4]=y_ode[m+1]*nuF2;   //Saving the conidia at the end of the last day of the week 0 here.
 
-		sim_results[week][5]=RestBefore;    //CK// Saving the resting spores (fungus) on the beginning day of each week. Actually only recording nuR2.
+		sim_results[week][5]=RestBefore;    //CK// Saving the resting spores (fungus) at the end of the second last day of the week. Actually only recording nuR2.
 		//sim_results[week][6]=Params->POPS[3]*Params->nuR;
-		sim_results[week][6]=Params->POPS[3]*nuR2;   //Saving the resting spores (fungus) on the ending day of each week. Actually only recording nuR2.
+		sim_results[week][6]=Params->POPS[3]*nuR2;   //Saving the resting spores (fungus) at the end of the last day of the week. Actually only recording nuR2.
         //In Weather-only model, no difference between conidia and resting spore. So only having one spore type for the fungus.
 
 //printf("Pop:%d\t Day:%d\t Week:%d\t Conidia1:%f\t Conidia2:%f\t Spores1: %f\t Spores2: %f\n", pop, day, week, sim_results[week][3],sim_results[week][4], sim_results[week][5], sim_results[week][6]); getc(stdin);
